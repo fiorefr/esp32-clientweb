@@ -79,8 +79,8 @@ def http_get(url):
     s.close()
 
 var = "http://10.11.5.89:8080/devices/0" # URL FOR THE POST
-#var2 = "http://10.11.5.89/locations" #URL FOR THE GET di tutte le location
-var2 = "http://10.11.5.89/devices/0/readings" #URL FOR THE GET delle letture device n:0
+var2 = "http://10.11.5.89/locations" #URL FOR THE GET 
+#var2 = "http://10.11.5.89/devices/" + n + "/readings" #URL FOR THE GET #this have to be moved in the source
 
 initi()
 
