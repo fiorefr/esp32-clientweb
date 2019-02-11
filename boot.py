@@ -55,7 +55,7 @@ def read():
         }
       ]
     }
-    response = urequests2.post(var, json=dict(stringa)) #call the post function
+    response = urequests2.post(url_post, json=dict(stringa)) #call the post function
     n = n + 1
 
 def http_get(url):
@@ -78,9 +78,11 @@ def http_get(url):
 
     s.close()
 
-var = "http://10.11.5.89:8080/devices/0" # URL FOR THE POST
-var2 = "http://10.11.5.89/locations" #URL FOR THE GET 
-#var2 = "http://10.11.5.89/devices/" + n + "/readings" #URL FOR THE GET #this have to be moved in the source
+url_post = "http://10.11.5.89:8080/devices/0" #POST
+url_get_loc = "http://10.11.5.89/locations" #GET di tutte le location
+url_get_dev = str("http://10.11.5.89/devices/" + n + "/readings") #GET delle letture device 
+
+url_db = 
 
 initi()
 
@@ -94,6 +96,6 @@ while True:
   time.sleep_ms(750)
   read()
   print('\nData sent\n')
-  http_get(var2)
+  http_get(url_get_loc)
   
 print("\nScript ended")
