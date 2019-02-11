@@ -78,11 +78,23 @@ def http_get(url):
 
     s.close()
 
+ 
+def conn_db():
+	string = {
+      "value": [
+        {
+          "mac": ubinascii.hexlify(WLAN().config('mac'),':').decode() ,
+        }
+      ]
+    }
+    resp = urequests2.post(url_post_db, json=dict(string))
+
+
 url_post = "http://10.11.5.89:8080/devices/0" #POST
 url_get_loc = "http://10.11.5.89/locations" #GET di tutte le location
 url_get_dev = str("http://10.11.5.89/devices/" + n + "/readings") #GET delle letture device 
 
-url_db = 
+url_post_db = "http://10.11.5.89/devices" #POST to a server redirected to DB
 
 initi()
 
@@ -90,12 +102,16 @@ getInfo()
 
 do_connect()
 
+conn_db()
+
+print("-------------------------------- DEVICE REGISTERED APPROVED --------------------------------")
+time.sleep_ms(750)
 print("-------------------------------- POST & GET --------------------------------")
 
 while True:
   time.sleep_ms(750)
   read()
-  print('\nData sent\n')
+  print('\nDati inviati\n')
   http_get(url_get_loc)
-  
-print("\nScript ended")
+
+print("\nFinito programma")
