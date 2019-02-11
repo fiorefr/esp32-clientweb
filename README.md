@@ -9,13 +9,13 @@ Collaborators : Fiorentini Francesco, Chen Zhi Fan
 
 How to use :
 
-  Open up the program and connect the breadboard by selecting the right COM and Baud rate, then click connect;
+   Open up the program and connect the breadboard by selecting the right COM and Baud rate, then click connect;
   
-  Load boot.py and urequests2.py (they have to be in the same folder where you lauched uPyLoader.exe) by clicking "Transfer";
+   Load boot.py and urequests2.py (they have to be in the same folder where you lauched uPyLoader.exe) by clicking "Transfer";
   
-  Click on "View" and select "Terminal";
+   Click on "View" and select "Terminal";
   
-  Click on boot.py once and click "Execute" button.
+   Click on boot.py once and click "Execute" button.
   
   
 Thanks for your attention, hope we helped you.
