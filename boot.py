@@ -93,7 +93,6 @@ def conn_db():
 url_post = "http://10.11.5.89:8080/devices/0" #POST
 url_get_loc = "http://10.11.5.89/locations" #GET di tutte le location
 url_get_dev = str("http://10.11.5.89/devices/" + n + "/readings") #GET delle letture device 
-
 url_post_db = "http://10.11.5.89/devices" #POST to a server redirected to DB
 
 initi()
