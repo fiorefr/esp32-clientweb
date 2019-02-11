@@ -122,6 +122,6 @@ while True:
       
   read()
   print('\nDati inviati\n')
-  http_get(url_dev)
+  #http_get(url_dev)
 
 print("\nFinito programma")
