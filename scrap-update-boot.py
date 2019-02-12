@@ -64,7 +64,7 @@ def read():
 
 def http_get(url):
     _, _, host, path = url.split('/', 3)
-    print("host: ",host,"path: ",path)
+    print("[1]: ",_,"[2]: ",_,"host: ",host,"path: ",path)
     addr_info = socket.getaddrinfo(host, 8080)
     addr = addr_info[0][-1]
     s = socket.socket()
@@ -90,7 +90,6 @@ def conn_db():
       ]
     }
   resp = urequests2.post(url_post_db, json = strdati, headers={'X-MAC-Address': mac})
-  #return str(resp)
 
 n=0
 url_dev_post = str("http://10.11.5.89/devices/%d/readings" % (n)) #sending/getting temperatures
@@ -107,7 +106,6 @@ initi()
 getInfo()
 do_connect()
 conn_db()
-#print(reg)
 print("-------------------------------- DEVICE REGISTERED APPROVED --------------------------------")
 time.sleep_ms(5000)
 print("-------------------------------- POST & GET --------------------------------")
@@ -122,6 +120,6 @@ while True:
       
   read()
   print('\nDati inviati\n')
-  #http_get(url_dev)
+  http_get(url_dev)
 
 print("\nFinito programma")
