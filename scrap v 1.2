@@ -120,21 +120,20 @@ time.sleep_ms(5000)
 print("-------------------------------- POST & GET --------------------------------")
 
 while True:
- try:
-  wlan = network.WLAN(network.STA_IF)
-  time.sleep_ms(10000)
-  if not wlan.isconnected():
-    do_connect()
-    while not wlan.isconnected():
-      pass
+  try:
+    wlan = network.WLAN(network.STA_IF)
+    time.sleep_ms(10000)
+    if not wlan.isconnected():
+      do_connect()
+      while not wlan.isconnected():
+        pass
       
-  read()
-  print('\nDati inviati\n')
-  http_get(url_get_loc)
- except KeyboardInterrupt:
-    sys.exit()
- except:
+    read()
+    print('\nDati inviati\n')
+    http_get(url_get_loc)
+    except KeyboardInterrupt:
+      sys.exit()
+  except:
     pass
 
 print("\nFinito programma")
-
