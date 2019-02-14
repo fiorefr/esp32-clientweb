@@ -92,7 +92,7 @@ def conn_db():
 
 def exists():
   respo = urequests2.get(url_reg_db, headers={'X-MAC-Address': mac})
-  if(respo.status_code() == 200):
+  if(respo.status_code == 200):
     return 0
 
 n=0
@@ -120,6 +120,7 @@ time.sleep_ms(5000)
 print("-------------------------------- POST & GET --------------------------------")
 
 while True:
+ try:
   wlan = network.WLAN(network.STA_IF)
   time.sleep_ms(10000)
   if not wlan.isconnected():
@@ -130,6 +131,10 @@ while True:
   read()
   print('\nDati inviati\n')
   http_get(url_get_loc)
+ except KeyboardInterrupt:
+    sys.exit()
+ except:
+    pass
 
 print("\nFinito programma")
 
